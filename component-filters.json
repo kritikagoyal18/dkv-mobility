@@ -38,7 +38,11 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "fragment",
+      "form",
+      "embed-adaptive-form"
+      
     ]
   },
   {
