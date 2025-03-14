@@ -159,7 +159,7 @@
         "value": "",
         "label": "Form Path",
         "validation": {
-          "rootPath": "/content/forms/af"
+          "rootPath": "/content"
         }
       }
     ]
