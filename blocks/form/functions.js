@@ -40,21 +40,21 @@ function days(endDate, startDate) {
 function submitToRestEndpoint(){
     console.log("hola!");
     let result = "";
-    // $.ajax({
-    //     url: '/content/dkvm-sign-endpoint',
-    //     type: 'POST',
-    //     //data: JSON.stringify({"actionNr": "8504"}),
-    //     success: function(response) {
-    //         alert("Thank you for submitting the form. We'll get back to you soon!");
-    //         console.log("success from post call");
-    //         result = "success";
-    //     },
-    //     error: function(xhr, status, error) {
-    //         alert("Thank you for submitting the form. We'll get back to you soon!");
-    //         console.error("Error: " + error);
-    //         result = "error";
-    //     }
-    // });
+    $.ajax({
+        url: '/content/dkvm-sign-endpoint',
+        type: 'POST',
+        //data: JSON.stringify({"actionNr": "8504"}),
+        success: function(response) {
+            alert("Thank you for submitting the form. We'll get back to you soon!");
+            console.log("success from post call");
+            result = "success";
+        },
+        error: function(xhr, status, error) {
+            alert("Thank you for submitting the form. We'll get back to you soon!");
+            console.error("Error: " + error);
+            result = "error";
+        }
+    });
     return result;
 }
 

@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: https://author-p133911-e1313554.adobeaemcloud.com/bin/franklin.delivery/jalagari/demo/main
+    url: https://author-p153004-e1584857.adobeaemcloud.com/bin/franklin.delivery/kritikagoyal18/dkvmobility/main
     type: "markup"
     suffix: ".html"
