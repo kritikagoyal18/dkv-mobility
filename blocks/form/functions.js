@@ -35,9 +35,10 @@ function days(endDate, startDate) {
 /**
  * Makes a REST call
  * @name submitToRestEndpoint Submits the request to REST endpoint
+ * @param {scope} globals
  * @return {string}
  */
-function submitToRestEndpoint(){
+function submitToRestEndpoint(globals){
     console.log("hola!");
     let result = "";
     $.ajax({
