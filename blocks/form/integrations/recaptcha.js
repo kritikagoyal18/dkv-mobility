@@ -71,14 +71,14 @@ export default class GoogleReCaptcha {
         grecaptcha.enterprise.ready(async () => {
           const submitAction = `submit_${this.formName}_${this.name}`;
           const token = await grecaptcha.enterprise.execute(
-            this.config.siteKey,
+            "6LfLvPYqAAAAAB2OHewh2qMn_0rxVsMcCnQMg9O6",
             { action: submitAction },
           );
           resolve(token);
         });
       } else {
         grecaptcha.ready(async () => {
-          const token = await grecaptcha.execute(this.config.siteKey, { action: 'submit' });
+          const token = await grecaptcha.execute("6LfLvPYqAAAAAB2OHewh2qMn_0rxVsMcCnQMg9O6", { action: 'submit' });
           resolve(token);
         });
       }
