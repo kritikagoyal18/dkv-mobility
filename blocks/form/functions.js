@@ -74,25 +74,33 @@ function submitContactUsForm(globals){
 
 /**
  * Set the Serial Number to its repeatable panel's instance index (1-based).
- * @param {Object} field - The field object inside the repeatable panel.
  * @param {scope} globals
  */
-function setRepeatablePanelIndex(field, globals) {
-    console.log("setRepeatablePanelIndex called"+field);
+function setRepeatablePanelIndex(globals) {
+    var field = this;
+    
+    if (!field) {
+        console.error("Field object is null or undefined.");
+        return;
+    }
+    
+    console.log("setRepeatablePanelIndex called from field with somExpression: " + field.somExpression);
+    
     // Traverse upward to locate the parent repeatable panel that contains the instance manager.
     var parentNode = field;
     while (parentNode && !parentNode.instanceManager) {
         parentNode = parentNode.parent;
     }
+    
     // If found, get the index of the instance that contains the field.
     if (parentNode && parentNode.instanceManager) {
         // Loop through the instances to find the matching one
         var instances = parentNode.instanceManager.instances;
-        console.log("instances.length"+instances.length);
+        console.log("instances.length: " + instances.length);
         for (var i = 0; i < instances.length; i++) {
             // We assume the field's immediate parent node corresponds to the instance.
             if (instances[i].somExpression === field.parent.somExpression) {
-                console.log("instances[i].somExpression :"+instances[i].somExpression);
+                console.log("instances[i].somExpression: " + instances[i].somExpression);
                 // Set the field value to the 1-based index.
                 field.value = i + 1;
                 break;
