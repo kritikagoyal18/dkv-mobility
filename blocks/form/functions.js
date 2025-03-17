@@ -60,6 +60,19 @@ function submitToRestEndpoint(globals){
 }
 
 /**
+ * Submit Contact Us form
+ * @name submitContactUsForm Submits Contact Us form
+ * @param {scope} globals
+ * @return {string}
+ */
+function submitContactUsForm(globals){
+    console.log("hola!");
+    let result = "";
+    alert("Thank you for submitting the form.");
+    return result;
+}
+
+/**
  * Set the Serial Number to its repeatable panel's instance index (1-based).
  * @param {Object} field - The field object inside the repeatable panel.
  * @param {scope} globals
