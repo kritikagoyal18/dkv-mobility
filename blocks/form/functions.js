@@ -73,45 +73,18 @@ function submitContactUsForm(globals){
 }
 
 /**
- * Set the Serial Number to its repeatable panel's instance index (1-based).
+ * Sets the index of repeatable panel
+ * @param {object} srField
  * @param {scope} globals
  */
-function setRepeatablePanelIndex(globals) {
-    var field = this;
-    
-    if (!field) {
-        console.error("Field object is null or undefined.");
-        return;
-    }
-    
-    console.log("setRepeatablePanelIndex called from field with somExpression: " + field.somExpression);
-    
-    // Traverse upward to locate the parent repeatable panel that contains the instance manager.
-    var parentNode = field;
-    while (parentNode && !parentNode.instanceManager) {
-        parentNode = parentNode.parent;
-    }
-    
-    // If found, get the index of the instance that contains the field.
-    if (parentNode && parentNode.instanceManager) {
-        // Loop through the instances to find the matching one
-        var instances = parentNode.instanceManager.instances;
-        console.log("instances.length: " + instances.length);
-        for (var i = 0; i < instances.length; i++) {
-            // We assume the field's immediate parent node corresponds to the instance.
-            if (instances[i].somExpression === field.parent.somExpression) {
-                console.log("instances[i].somExpression: " + instances[i].somExpression);
-                // Set the field value to the 1-based index.
-                field.value = i + 1;
-                break;
-            }
-        }
-    } else {
-        console.warn("Repeatable panel not found for field: " + field.somExpression);
-    }
+function setRepeatablePanelIndex(srField, globals) {
+  console.log("field.length: " + srField.somExpression);
+
+  globals.functions.setProperty(
+    srField,
+    { value: '1' },
+  );
 }
-
-
 
 // eslint-disable-next-line import/prefer-default-export
 export { getFullName, days, submitContactUsForm, setRepeatablePanelIndex };
