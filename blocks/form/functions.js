@@ -76,14 +76,16 @@ function submitContactUsForm(globals){
  * Sets the index of repeatable panel
  * @param {object} srField
  * @param {scope} globals
+ * @return {string}
  */
 function setRepeatablePanelIndex(srField, globals) {
   console.log("field.length: " + srField.somExpression);
 
-  globals.functions.setProperty(
+  /*globals.functions.setProperty(
     srField,
     { value: '1' },
-  );
+  );*/
+    return "1";
 }
 
 // eslint-disable-next-line import/prefer-default-export
