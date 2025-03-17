@@ -74,9 +74,11 @@ function setRepeatablePanelIndex(field, globals) {
     if (parentNode && parentNode.instanceManager) {
         // Loop through the instances to find the matching one
         var instances = parentNode.instanceManager.instances;
+        console.log("instances.length"+instances.length);
         for (var i = 0; i < instances.length; i++) {
             // We assume the field's immediate parent node corresponds to the instance.
             if (instances[i].somExpression === field.parent.somExpression) {
+                console.log("instances[i].somExpression :"+instances[i].somExpression);
                 // Set the field value to the 1-based index.
                 field.value = i + 1;
                 break;
