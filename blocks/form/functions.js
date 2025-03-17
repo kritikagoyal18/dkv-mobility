@@ -65,6 +65,7 @@ function submitToRestEndpoint(globals){
  * @param {scope} globals
  */
 function setRepeatablePanelIndex(field, globals) {
+    console.log("setRepeatablePanelIndex called"+field);
     // Traverse upward to locate the parent repeatable panel that contains the instance manager.
     var parentNode = field;
     while (parentNode && !parentNode.instanceManager) {
