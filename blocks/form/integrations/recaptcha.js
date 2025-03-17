@@ -41,7 +41,9 @@ export default class GoogleReCaptcha {
             if (this.config.version === 'enterprise') {
               this.#loadScript(`${url}?render=${siteKey}`);
             } else {
-              this.#loadScript(`https://www.google.com/recaptcha/api.js?render=${siteKey}`);
+              //this.#loadScript(`https://www.google.com/recaptcha/api.js?render=${siteKey}`);
+              //6LfLvPYqAAAAAB2OHewh2qMn_0rxVsMcCnQMg9O6
+              this.#loadScript('https://www.google.com/recaptcha/api.js?render=6LfLvPYqAAAAAB2OHewh2qMn_0rxVsMcCnQMg9O6');
             }
             obs.disconnect();
           }
