@@ -106,4 +106,4 @@ function setRepeatablePanelIndex(field, globals) {
 
 
 // eslint-disable-next-line import/prefer-default-export
-export { getFullName, days, submitToRestEndpoint, setRepeatablePanelIndex };
+export { getFullName, days, submitContactUsForm, setRepeatablePanelIndex };
