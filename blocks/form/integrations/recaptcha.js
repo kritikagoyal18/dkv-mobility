@@ -36,10 +36,10 @@ export default class GoogleReCaptcha {
       const obs = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const { siteKey } = this.config;
+            const { siteKey } = "6LfLvPYqAAAAAB2OHewh2qMn_0rxVsMcCnQMg9O6";
             const url = this.config.uri;
             if (this.config.version === 'enterprise') {
-              this.#loadScript(`${url}?render=${siteKey}`);
+              this.#loadScript(`${url}?render=6LfLvPYqAAAAAB2OHewh2qMn_0rxVsMcCnQMg9O6`);
             } else {
               //this.#loadScript(`https://www.google.com/recaptcha/api.js?render=${siteKey}`);
               //6LfLvPYqAAAAAB2OHewh2qMn_0rxVsMcCnQMg9O6
