@@ -59,5 +59,35 @@ function submitToRestEndpoint(globals){
     return result;
 }
 
+/**
+ * Set the Serial Number to its repeatable panel's instance index (1-based).
+ * @param {Object} field - The field object inside the repeatable panel.
+ * @param {scope} globals
+ */
+function setRepeatablePanelIndex(field, globals) {
+    // Traverse upward to locate the parent repeatable panel that contains the instance manager.
+    var parentNode = field;
+    while (parentNode && !parentNode.instanceManager) {
+        parentNode = parentNode.parent;
+    }
+    // If found, get the index of the instance that contains the field.
+    if (parentNode && parentNode.instanceManager) {
+        // Loop through the instances to find the matching one
+        var instances = parentNode.instanceManager.instances;
+        for (var i = 0; i < instances.length; i++) {
+            // We assume the field's immediate parent node corresponds to the instance.
+            if (instances[i].somExpression === field.parent.somExpression) {
+                // Set the field value to the 1-based index.
+                field.value = i + 1;
+                break;
+            }
+        }
+    } else {
+        console.warn("Repeatable panel not found for field: " + field.somExpression);
+    }
+}
+
+
+
 // eslint-disable-next-line import/prefer-default-export
-export { getFullName, days, submitToRestEndpoint };
+export { getFullName, days, submitToRestEndpoint, setRepeatablePanelIndex };
